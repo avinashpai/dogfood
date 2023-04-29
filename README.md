@@ -8,13 +8,9 @@
     git clone git@github.com:avinashpai/dogfood.git
     cd dogfood/backend
     poetry shell
-    cd ../client
+    cd ..
 ```
-### In separate terminal windows:
+### Run Flask and React Development Servers:
 ```sh
-    npm run start-api   # runs "cd ../backend/api && flask run --server app --debug"
-    # Flask API proxy is localhost:5000 (set in package.json)
-```
-```sh
-    npm start           # Launches browser to localhost:3000
+    ./run.sh
 ```
