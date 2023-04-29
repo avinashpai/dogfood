@@ -8,9 +8,9 @@
     git clone git@github.com:avinashpai/dogfood.git
     cd dogfood/backend
     poetry shell
-    cd ..
 ```
 ### Run Flask and React Development Servers:
 ```sh
+    cd ..
     ./run.sh
 ```
