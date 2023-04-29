@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import './App.css'
 
-function App() {
+const CarResults = () => {
   const [data, setData] = useState([{}])
   
   useEffect(() => {
@@ -29,27 +29,41 @@ function App() {
   }, [])
 
   return (
-    <div>
-      {(typeof data.members === 'undefined') ? (
+    (typeof data.members === 'undefined') ? (
         <p>Loading...</p>
       ): (
           data.members.map((member, i) => (
-            <p key={i}>{member}
+            <p key={i++}>{member}
+            <ul>
             {(typeof carData.cars === 'undefined') ? (
-              <li>Loading Cars...</li>
+              <li key={i++}>Loading Cars...</li>
             ): (
                 (Object.keys(carData.cars).includes(member)) ? (
                 carData.cars[member].map((car) => (
-                  <li>{car}</li>
+                  <li key={i++}>{car}</li>
                 ))
               ): (
-                <li>None</li>
+                <li key={i++}>None</li>
               )
             )}
+            </ul>
             </p>
         ))
-      )}
-    </div>
+      ) 
+  ) 
+}
+
+const App = () => {
+   
+  const [showCars, setShowCars] = useState(false)
+  
+  const onClick = () => setShowCars(true)
+
+  return (
+    <div>
+      <input type="submit" value="Show Cars" onClick={onClick} />
+      { showCars ? <CarResults /> : null }
+          </div>
   )
 }
 
