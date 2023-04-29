@@ -6,13 +6,13 @@
 ### Fetch source and activate virtual environment
 ```sh
     git clone git@github.com:avinashpai/dogfood.git
-    cd dogfood/server
+    cd dogfood/backend
     poetry shell
     cd ../client
 ```
 ### In separate terminal windows:
 ```sh
-    npm run start-api   # runs "cd ../server/src && flask run --server app --debug"
+    npm run start-api   # runs "cd ../backend/api && flask run --server app --debug"
     # Flask API proxy is localhost:5000 (set in package.json)
 ```
 ```sh
