@@ -1,10 +1,9 @@
 #!/usr/bin/bash
 
 cd ./backend
-poetry install
-
+poetry shell
+#!/usr/bin/bash
 cd ../client
-#!/usr/bin/env bash
 npm run start-api &
 pid[0]=$!
 npm start &
