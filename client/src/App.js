@@ -33,17 +33,17 @@ const CarResults = () => {
         <p>Loading...</p>
       ): (
           data.members.map((member, i) => (
-            <p key={i++}>{member}
+            <p key={i}>{member}
             <ul>
             {(typeof carData.cars === 'undefined') ? (
-              <li key={i++}>Loading Cars...</li>
+              <li>Loading Cars...</li>
             ): (
                 (Object.keys(carData.cars).includes(member)) ? (
                 carData.cars[member].map((car) => (
-                  <li key={i++}>{car}</li>
+                  <li>{car}</li>
                 ))
               ): (
-                <li key={i++}>None</li>
+                <li>None</li>
               )
             )}
             </ul>
